@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Tag selectors */
+
+body,
+html {
+  margin: 0;
+}
+
+/* Id selectors */
+#hero {
+  background-image: url("/image/barber.png");
+}
+
+/* Class selectors */
