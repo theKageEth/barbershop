@@ -1,4 +1,8 @@
+import { gsap } from "gsap";
 import Typed from "typed.js";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+gsap.registerPlugin(ScrollTrigger);
 
 document.addEventListener("DOMContentLoaded", function () {
   const menuOption = document.getElementById("menu-option");
@@ -36,4 +40,41 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: false,
     showCursor: false,
   });
+
+  //animations
+
+  gsap.to("#opening", {
+    opacity: 1,
+    scrollTrigger: {
+      trigger: "#opening",
+      start: "top 70%",
+      end: "bottom 70%",
+      scrub: true,
+    },
+  });
+
+  document.querySelectorAll(".cardflip").forEach((label, index) => {
+    // Find the input element within the label
+    const checkbox = label.querySelector('input[type="checkbox"]');
+
+    var tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: `#card${index + 1}`,
+        start: "top 60%",
+        end: "bottom 40%",
+        toggleActions: "play none none reverse",
+        scrub: true,
+      },
+    });
+
+    tl.to(checkbox, {
+      checked: true,
+    });
+  });
+
+  //dashboard functions
+
+  var name = document.getElementById("name").value;
+  var day = document.getElementById("day").value;
+  var time = document.getElementById("time").value;
 });
