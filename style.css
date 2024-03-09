@@ -15,7 +15,7 @@ html {
   opacity: 0; /* Initially set opacity to 0 */
   transition: opacity 0.5s;
 }
-
+/* particle js background for D2, D1 couldnt apply it */
 #particles-js {
   position: absolute;
   top: 800px;

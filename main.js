@@ -1,4 +1,4 @@
-import { gsap } from "gsap";
+import gsap from "gsap";
 import Typed from "typed.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import AOS from "aos";
@@ -48,16 +48,10 @@ document.addEventListener("DOMContentLoaded", function () {
     showCursor: false,
   });
   //background animation
-  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
-  particlesJS.load("particles-js", "/particlesjs-config.json", function () {});
-  particlesJS.load(
-    "particles-js2",
-    "/particlesjs-config2.json",
-    function () {}
-  );
+
   //animations
 
-  AOS.init();
+  AOS.init({ once: true });
 
   gsap.to("#opening", {
     opacity: 1,
