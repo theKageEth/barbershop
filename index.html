@@ -5,18 +5,20 @@
   <link rel="icon" type="image/png" href="./image/favicon.png" />
 
   <link rel="stylesheet" href="/style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
 
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>GrizzlyBeard Home</title>
 </head>
-<body class="min-h-screen bg-base-100 text-black dark:text-white">
+<body class="min-h-screen bg-base-100 text-black dark:text-white overflow-x-hidden">
   <!---------------NAVBAR------------------------>
 
-  <nav class="top-0 w-screen fixed z-50 bg-base-100 opacity-100 border-b border-secondary">
+  <nav class="top-0 w-screen fixed z-50 bg-primary opacity-100 border-b-4 border-accent ">
     <div class="navbar">
       <div class="navbar-start">
         <div class="dropdown">
-          <div id="menu-toggle" tabindex="0" role="button" class="btn btn-outline btn-primary lg:hidden">
+          <div id="menu-toggle" tabindex="0" role="button" class="btn btn-outline btn-accent lg:hidden">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
               stroke="currentColor">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
@@ -28,6 +30,7 @@
             <li><a href="/index.html#opening">Opening Times</a></li>
             <li><a href="/index.html#services">Services</a></li>
             <li><a href="/index.html#contact-us">Contact us</a></li>
+            <li><a href="/login.html">Login</a></li>
           </ul>
         </div>
         <a href="index.html" class="btn btn-ghost text-xl ml-5 normal-case">
@@ -40,11 +43,12 @@
           <li><a href="/index.html#opening">Opening Times</a></li>
           <li><a href="/index.html#services">Services</a></li>
           <li><a href="/index.html#contact-us">Contact us</a></li>
+          <li><a href="/login.html">Login</a></li>
         </ul>
       </div>
-      <div class="navbar-end mx-15 px-5">
-        <label class="swap swap-rotate mr-10">
-          
+      <div class="navbar-end  px-5">
+        <label class="swap swap-rotate mr-3">
+
           <input id="theme-toggle" type="checkbox" class="theme-controller" />
 
           <!-- sun icon -->
@@ -59,7 +63,7 @@
               d="M21.64,13a1,1,0,0,0-1.05-.14,8.05,8.05,0,0,1-3.37.73A8.15,8.15,0,0,1,9.08,5.49a8.59,8.59,0,0,1,.25-2A1,1,0,0,0,8,2.36,10.14,10.14,0,1,0,22,14.05,1,1,0,0,0,21.64,13Zm-9.5,6.69A8.14,8.14,0,0,1,7.08,5.22v.27A10.15,10.15,0,0,0,17.22,15.63a9.79,9.79,0,0,0,2.1-.22A8.11,8.11,0,0,1,12.14,19.73Z" />
           </svg>
         </label>
-        <a href="/login.html" class="btn btn-outline btn-ghost normal-case">Login</a>
+
       </div>
     </div>
   </nav>
@@ -67,30 +71,39 @@
   <!-----------Hero Section------------------------>
 
   <main>
-    <section id="home">
-      <div id="hero" class="hero min-h-screen">
-        <div class="hero-overlay bg-opacity-60"></div>
-        <div class="hero-content text-center text-neutral-content">
-          <div class="max-w-md">
-            <h1 class="mb-5 text-5xl font-bold">
-              Welcome to <br />
-              <em id="welcome"></em>
-            </h1>
-            <p class="mb-10 mt-16">
-              At GizzlyBeard, we offer professional barbering services with a
-              touch of style and sophistication. From classic haircuts to
-              modern grooming techniques, our experienced barbers are
-              dedicated to providing you with the best experience.
-            </p>
+    <section id="home"
+      class="min-h-screen flex flex-col lg:flex-row text-center justify-center items-center p-5 mt-10 gap-5">
 
-            <a href="#services" class="btn btn-primary mr-4">Explore Our Services</a>
-            <a href="/login.html" class="btn btn-secondary">Book an Appointment</a>
-          </div>
+      <div class="lg:w-1/2">
+        <h1 data-aos="fade-right" data-aos-easing="linear" data-aos-duration="1000"
+          class=" my-5 text-5xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+          GrizzlyBeard
+        </h1>
+
+        <p id="welcome"
+          class="text-2xl font-bold bg-gradient-to-t from-accent to-secondary bg-clip-text text-transparent"></p>
+        <p class="mb-10 mt-10" data-aos="fade-up" data-aos-easing="linear" data-aos-duration="1500"
+          data-aos-mirror="true">
+          At GizzlyBeard, we offer professional barbering services with a
+          touch of style and sophistication. From classic haircuts to
+          modern grooming techniques, our experienced barbers are
+          dedicated to providing you with the best experience.
+        </p>
+        <div data-aos="fade-up" data-aos-duration="1500" data-aos-mirror="true" class="z-40">
+
+          <a href="#services" class="btn btn-primary mr-4">Explore Our Services</a>
+          <a href="/login.html" class="btn btn-secondary">Book an Appointment</a>
         </div>
       </div>
+
+      <img id="heroimage" data-aos="fade-up-left" data-aos-easing="linear" data-aos-duration="1500"
+        class="rounded-full pointer-events-none select-none object-cover mt-10 lg:mt-20 lg:w-1/2 lg:ml-10"
+        src="image/barberbanner.png" alt="barber shop grizzlybear chairs">
+
     </section>
 
-    <section id="opening" class="text-center bg-amber-50 dark:bg-amber-100 dark:text-black mt-5 py-20 min-h-screen">
+
+    <section id="opening" class="text-center bg-base-100 mt-5 py-20 min-h-screen">
       <div>
         <h2 class="text-2xl font-semibold mb-2">Opening Times</h2>
       </div>
@@ -124,142 +137,101 @@
           <p>Closed</p>
         </div>
         <div>
-          <h2 class="text-2xl font-semibold mt-10">Location</h2>
-          <p class="hover:underline">
+          <h2 class="text-2xl font-semibold mt-10 mb-3">Location</h2>
+          <p class="hover:underline decoration-accent ">
             <a href="https://maps.app.goo.gl/Gc8je5o2TDGJJhLy6">150 Corporation St, Birmingham B4 6TB</a>
           </p>
         </div>
       </div>
     </section>
 
-    <section id="services"
-      class="p-5 mb-5 justify-center items-center text-center bg-amber-50 dark:bg-amber-100 dark:text-black min-h-screen">
-      <h2 class="text-2xl font-semibold mb-5 pb-10 pt-2 mt-3">Services</h2>
-      <div class="flex flex-wrap justify-center gap-8 ">
-
-        <label class="swap swap-flip  cardflip" id="card1">
-
-          <input type="checkbox" />
-          <div class="swap-on ">
-            <div
-              class="card w-96 bg-secondary  shadow-xl text-white dark:text-black border-dashed border-amber-300 border-2">
-              <figure class="px-10 pt-10">
-                <img src="image/haircut.png" alt="haircut service" class="rounded-xl h-[250px] w-[350px]" />
-              </figure>
-              <div class="card-body items-center text-center">
-                <h2 class="card-title">Hair Cutting</h2>
-                <p>Get a stylish haircut from our experienced barbers. Whether you're looking for a classic trim or a
-                  trendy new style, we've got you covered</p>
-                <div class="card-actions">
-                  <a href="/login.html" class="btn btn-primary">£15</a>
-                </div>
+    <section id="services" class="text-center bg-base-100 min-h-screen flex justify-center items-center">
+      <div class="my-10 py-10">
+        <div>
+          <h2 class="text-2xl font-semibold mb-10">Services</h2>
+        </div>
+        <div class="flex flex-col gap-10  mx-5">
+          <div class="flip-card card w-96 bg-primary shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="/image/haircut.png" alt="haircut card" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Haircut</h2>
+              <p>Get a stylish haircut from our experienced barbers. Whether you're looking for a classic trim or a
+                trendy new style, we've got you covered</p>
+              <div class="card-actions">
+                <a href="/login.html" class="btn btn-accent">Book Now</a>
               </div>
             </div>
           </div>
-          <div class="swap-off"><img src="image/barberbanner.png" class="w-96 border-dashed border-amber-300 border-2"
-              alt="banner barber"></div>
-        </label>
-        <label class="swap swap-flip  cardflip" id="card2">
-
-          <input type="checkbox" />
-          <div class="swap-on ">
-            <div
-              class="card w-96 bg-secondary  shadow-xl text-white dark:text-black border-dashed border-amber-300 border-2">
-              <figure class="px-10 pt-10">
-                <img src="image/beard.png" alt="beard trimming service" class="rounded-xl h-[250px] w-[350px]" />
-              </figure>
-              <div class="card-body items-center text-center">
-                <h2 class="card-title">Beard Trimming</h2>
-                <p>Keep your beard looking sharp with our professional beard trimming service. Our barbers will expertly
-                  shape and groom your beard to perfection</p>
-                <div class="card-actions">
-                  <a href="/login.html" class="btn btn-primary">£10</a>
-                </div>
+          <div class="flip-card card w-96 bg-primary shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="image/beard.png" alt="beard trimming service" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Beard Trimming</h2>
+              <p>Keep your beard looking sharp with our professional beard trimming service. Our barbers will expertly
+                shape and groom your beard to perfection</p>
+              <div class="card-actions">
+                <a href="/login.html" class="btn btn-accent">Book Now</a>
               </div>
             </div>
           </div>
-          <div class="swap-off"><img src="image/barberbanner.png" class="w-96 border-dashed border-amber-300 border-2"
-              alt="banner barber"></div>
-        </label>
-        <label class="swap swap-flip  cardflip" id="card3">
-
-          <input type="checkbox" />
-          <div class="swap-on ">
-            <div
-              class="card w-96 bg-secondary  shadow-xl text-white dark:text-black border-dashed border-amber-300 border-2">
-              <figure class="px-10 pt-10">
-                <img src="image/shaving.png" alt="Shaving service" class="rounded-xl h-[250px] w-[350px]" />
-              </figure>
-              <div class="card-body items-center text-center">
-                <h2 class="card-title">Shaving</h2>
-                <p>Experience the ultimate shaving experience with our hot towel shave service. Relax and enjoy as our
-                  skilled barbers provide a close, comfortable shave</p>
-                <div class="card-actions">
-                  <a href="/login.html" class="btn btn-primary">£15</a>
-                </div>
+          <div class="flip-card card w-96 bg-primary shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="image/shaving.png" alt="Shaving service" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Shaving</h2>
+              <p>Experience the ultimate shaving experience with our hot towel shave service. Relax and enjoy as our
+                skilled barbers provide a close, comfortable shave</p>
+              <div class="card-actions">
+                <a href="/login.html" class="btn btn-accent">Book Now</a>
               </div>
             </div>
           </div>
-          <div class="swap-off"><img src="image/barberbanner.png" class="w-96 border-dashed border-amber-300 border-2"
-              alt="banner barber"></div>
-        </label>
-        <label class="swap swap-flip  cardflip" id="card4">
-
-          <input type="checkbox" />
-          <div class="swap-on ">
-            <div
-              class="card w-96 bg-secondary  shadow-xl text-white dark:text-black border-dashed border-amber-300 border-2">
-              <figure class="px-10 pt-10">
-                <img src="image/styling.png" alt="hair styling service" class="rounded-xl h-[250px] w-[350px]" />
-              </figure>
-              <div class="card-body items-center text-center">
-                <h2 class="card-title">Hair Styling</h2>
-                <p>Elevate your look with our professional hair styling service. Whether you want a sleek and
-                  sophisticated style or a bold and edgy look, our talented stylists will create the perfect hairstyle
-                  for you</p>
-                <div class="card-actions">
-                  <a href="/login.html" class="btn btn-primary">£25</a>
-                </div>
+          <div class="flip-card card w-96 bg-primary shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="image/styling.png" alt="hair styling service" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Hair Styling</h2>
+              <p>Elevate your look with our professional hair styling service. Whether you want a sleek and
+                sophisticated style or a bold and edgy look, our talented stylists will create the perfect hairstyle
+                for you</p>
+              <div class="card-actions">
+                <a href="/login.html" class="btn btn-accent">Book Now</a>
               </div>
             </div>
           </div>
-          <div class="swap-off"><img src="image/barberbanner.png" class="w-96 border-dashed border-amber-300 border-2"
-              alt="banner barber"></div>
-        </label>
-        <label class="swap swap-flip  cardflip" id="card5">
-
-          <input type="checkbox" />
-          <div class="swap-on ">
-            <div
-              class="card w-96 bg-secondary  shadow-xl text-white dark:text-black border-dashed border-amber-300 border-2">
-              <figure class="px-10 pt-10">
-                <img src="image/color.png" alt="hair coloring service" class="rounded-xl" />
-              </figure>
-              <div class="card-body items-center text-center">
-                <h2 class="card-title">Hair Coloring</h2>
-                <p>Add dimension and depth to your hair with our coloring services. From subtle highlights to bold
-                  fashion colors, our color specialists will help you achieve the perfect hue</p>
-                <div class="card-actions">
-                  <a href="/login.html" class="btn btn-primary">£35</a>
-                </div>
+          <div class="flip-card card w-96 bg-primary shadow-xl">
+            <figure class="px-10 pt-10">
+              <img src="image/color.png" alt="hair coloring service" class="rounded-xl" />
+            </figure>
+            <div class="card-body items-center text-center">
+              <h2 class="card-title">Hair Coloring</h2>
+              <p>Add dimension and depth to your hair with our coloring services. From subtle highlights to bold
+                fashion colors, our color specialists will help you achieve the perfect hue</p>
+              <div class="card-actions">
+                <a href="/login.html" class="btn btn-accent">Book Now</a>
               </div>
             </div>
           </div>
-          <div class="swap-off"><img src="image/barberbanner.png" class="w-96 border-dashed border-amber-300 border-2"
-              alt="banner barber"></div>
-        </label>
 
+        </div>
       </div>
     </section>
 
-    <section id="contact-us">
-      <div class="hero min-h-screen bg-base-200">
-        <div class="hero-content flex-col lg:flex-row-reverse">
+
+    <section id="contact-us" class="mb-5">
+      <div class="hero min-h-screen bg-base-100 mt-10 mb-4">
+        <div class="hero-content flex-col lg:gap-20 lg:flex-row-reverse">
           <div class="text-center lg:text-left">
             <h1 class="text-5xl font-bold">Contact us!</h1>
-            <p class="py-6">We'd love to hear from you! If you have any questions or inquiries, please don't hesitate to reach out to us.</p>
+            <p class="py-6">We'd love to hear from you! If you have any questions or inquiries, please don't hesitate to
+              reach out to us.</p>
             <br>
-            <p><strong>Phone:</strong> 0121 124 4787</p>
+            <p class="mb-4 hover:underline decoration-accent"><strong>Phone:</strong> 0121 124 4787</p>
           </div>
           <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
             <form class="card-body">
@@ -274,10 +246,10 @@
                   <span class="label-text">Message</span>
                 </label>
                 <textarea class="textarea textarea-accent" placeholder="Your Message" required></textarea>
-                
+
               </div>
               <div class="form-control mt-6">
-                <button class="btn btn-primary">Send</button>
+                <button class="btn btn-secondary">Send</button>
               </div>
             </form>
           </div>
@@ -285,9 +257,11 @@
       </div>
     </section>
 
+
+
     <!-----------Footer Section------------------------>
 
-    <footer class="footer footer-center p-10 dark:bg-neutral bg-base-100  bottom-0 w-screen">
+    <footer class="footer footer-center p-10 bg-primary   bottom-0 w-screen">
       <aside>
         <a href="/index.html#home">
           <img src="/image/favicon.png" alt="footer logo GrizzlyBeard" />
@@ -325,6 +299,19 @@
       </nav>
     </footer>
 
-    <script type="module" src="/home.js"></script>
+    <!-- Canvas for background -->
+    <!-- count particles -->
+
+
+    <!-- particles.js container -->
+    <div id="particles-js"></div>
+    <div id="particles-js2"></div>
+
+
+    <!-- scripts -->
+
+    <script src="/particles.js"></script>
+    <script type="module" src="/main.js"></script>
+
 </body>
 </html>

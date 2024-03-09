@@ -1,6 +1,8 @@
 import { gsap } from "gsap";
 import Typed from "typed.js";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -32,7 +34,12 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 
   const typed = new Typed("#welcome", {
-    strings: ["your barber", "your GizzlyBeard", "GizzlyBeard"],
+    strings: [
+      "Welcome to Classic Cuts",
+      "Welcome to Sophisticated",
+      "Welcome to Stylish",
+      "Welcome to the Art of Barbering",
+    ],
     startDelay: 0,
     typeSpeed: 70,
     backSpeed: 20,
@@ -40,8 +47,17 @@ document.addEventListener("DOMContentLoaded", function () {
     loop: false,
     showCursor: false,
   });
-
+  //background animation
+  /* particlesJS.load(@dom-id, @path-json, @callback (optional)); */
+  particlesJS.load("particles-js", "/particlesjs-config.json", function () {});
+  particlesJS.load(
+    "particles-js2",
+    "/particlesjs-config2.json",
+    function () {}
+  );
   //animations
+
+  AOS.init();
 
   gsap.to("#opening", {
     opacity: 1,
@@ -53,28 +69,16 @@ document.addEventListener("DOMContentLoaded", function () {
     },
   });
 
-  document.querySelectorAll(".cardflip").forEach((label, index) => {
-    // Find the input element within the label
-    const checkbox = label.querySelector('input[type="checkbox"]');
-
-    var tl = gsap.timeline({
+  document.querySelectorAll(".flip-card").forEach((card) => {
+    gsap.to(card, {
+      opacity: 1,
+      duration: 1, // Animation duration in seconds
       scrollTrigger: {
-        trigger: `#card${index + 1}`,
-        start: "top 60%",
-        end: "bottom 40%",
-        toggleActions: "play none none reverse",
+        trigger: card,
+        start: "top 70%",
+        end: "bottom 70%",
         scrub: true,
       },
     });
-
-    tl.to(checkbox, {
-      checked: true,
-    });
   });
-
-  //dashboard functions
-
-  var name = document.getElementById("name").value;
-  var day = document.getElementById("day").value;
-  var time = document.getElementById("time").value;
 });
