@@ -19,6 +19,7 @@
     "aos": "^2.3.4",
     "gsap": "^3.12.5",
     "particles.js": "^2.0.0",
-    "typed.js": "^2.1.0"
+    "typed.js": "^2.1.0",
+    "@rollup/rollup-linux-x64-gnu": "4.6.1"
   }
 }
